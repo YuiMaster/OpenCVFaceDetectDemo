@@ -108,8 +108,8 @@ Java_com_jansir_opencvdemo_FaceDetector_faceDetectSave(JNIEnv *env, jobject thiz
     equalizeHist(grayMat, equalizeMat);
     // 4. 检测人脸
     vector<Rect> faces;
-    cascadeClassifier.detectMultiScale(equalizeMat, faces, 5.1, 5, 2,
-                                       Size(10, 10));
+    cascadeClassifier.detectMultiScale(equalizeMat, faces, 1.1, 5, 2,
+                                       Size(10, 10), Size(200, 200));
     LOGE("检测到人脸的个数：%d", faces.size());
     if (faces.size() == 1) {
         Rect faceRect = faces[0];
